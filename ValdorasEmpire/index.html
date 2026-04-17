@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valdora's Empire  Dress Like Royalty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+
+        :root {
+            --royal-purple: #2D0B5A;
+            --deep-purple: #1a0636;
+            --gold: #D4AF37;
+            --soft-gold: #f4e4bc;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fdfdfd;
+            color: var(--deep-purple);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        .bg-royal {
+            background-color: var(--royal-purple);
+        }
+
+        .text-gold {
+            color: var(--gold);
+        }
+
+        /* Smart Header Logic */
+        nav {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+        }
+
+        .nav-hidden {
+            transform: translateY(-100%);
+        }
+
+        .btn-gold {
+            background-color: var(--gold);
+            color: var(--royal-purple);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--soft-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(rgba(26, 6, 54, 0.6), rgba(26, 6, 54, 0.6)), 
+                        url('https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .gold-underline::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: var(--gold);
+            margin: 20px auto;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-link:hover::after {
+                width: 100%;
+            }
+        }
+
+        .royal-texture {
+            background-image: url("https://www.transparenttextures.com/patterns/padded-little.png");
+        }
+
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+
+        /* Icon Glow */
+        .glow-hover:hover i {
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="bg-royal/95 backdrop-blur-md text-white py-5 md:py-6 px-6 md:px-16 flex justify-between items-center fixed top-0 left-0 w-full z-50 shadow-2xl">
+        <div class="text-xl md:text-3xl font-bold tracking-[0.2em] brand-font text-gold cursor-pointer" onclick="window.scrollTo(0,0)">
+            VALDORA'S EMPIRE
+        </div>
+        <div class="hidden lg:flex space-x-12 uppercase text-[11px] tracking-[0.4em] font-semibold">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">Mission</a>
+            <a href="#collections" class="nav-link">Collections</a>
+            <a href="#reviews" class="nav-link">Reviews</a>
+        </div>
+        <div>
+            <button class="border-2 border-gold px-6 py-2 text-[11px] uppercase tracking-[0.2em] text-gold hover:bg-gold hover:text-royal transition-all font-bold">
+                Enter Empire
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-gradient h-[90vh] md:h-screen flex items-center justify-center text-center text-white px-6">
+        <div class="max-w-6xl">
+            <p class="text-gold tracking-[0.6em] md:tracking-[0.8em] uppercase text-[10px] md:text-sm mb-8 animate-pulse font-bold">"Dress Like Royalty"</p>
+            <h1 class="text-5xl md:text-9xl mb-10 font-bold tracking-tight leading-none reveal active">The Royal Standard</h1>
+            <p class="text-xl md:text-3xl font-light italic mb-12 text-gray-100 tracking-wider reveal active delay-100">
+                Exquisite Style for Every Queen & Her Heirs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-8 justify-center reveal active delay-200">
+                <a href="#collections" class="btn-gold px-14 py-5 font-bold uppercase tracking-[0.3em] text-[11px]">Shop The Collection</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mission & Core Values -->
+    <section id="about" class="py-32 px-8 bg-white royal-texture">
+        <div class="max-w-6xl mx-auto text-center reveal">
+            <h2 class="text-3xl md:text-5xl brand-font mb-12 gold-underline uppercase tracking-[0.3em]">Our Mission</h2>
+            <p class="text-xl md:text-2xl leading-relaxed text-gray-600 font-light italic max-w-4xl mx-auto mb-20">
+                "To deliver timeless fashion that blends elegance, quality, and sophistication, empowering women and children to stand out with confidence and style in every moment."
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mt-20">
+                <div class="group reveal delay-100 glow-hover">
+                    <div class="text-gold text-4xl mb-6 flex justify-center"><i class="fas fa-gem transition-all"></i></div>
+                    <h4 class="brand-font text-lg mb-4 tracking-widest">Premium Quality</h4>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed">Sourcing only the finest fabrics for our royal clientele.</p>
+                </div>
+                <div class="group reveal delay-200 glow-hover">
+                    <div class="text-gold text-4xl mb-6 flex justify-center"><i class="fas fa-feather-alt transition-all"></i></div>
+                    <h4 class="brand-font text-lg mb-4 tracking-widest">Bespoke Detail</h4>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed">Every stitch tells a story of elegance and precision.</p>
+                </div>
+                <div class="group reveal delay-300 glow-hover">
+                    <div class="text-gold text-4xl mb-6 flex justify-center"><i class="fas fa-crown transition-all"></i></div>
+                    <h4 class="brand-font text-lg mb-4 tracking-widest">Empowered Style</h4>
+                    <p class="text-sm text-gray-400 font-light leading-relaxed">Confidence tailored specifically for women and children.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Collection Gallery -->
+    <section id="collections" class="bg-[#111] py-24 overflow-hidden">
+        <div class="text-center mb-16 px-6 reveal">
+            <h2 class="text-gold text-3xl md:text-5xl brand-font tracking-[0.3em] uppercase mb-4">The Royal Collection</h2>
+            <p class="text-gray-500 text-xs uppercase tracking-[0.5em]">Style for Women & Children of Every Age</p>
+        </div>
+        <div class="max-w-[1800px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-1 px-1">
+            <!-- Item 1 - High Fashion Women -->
+            <div class="relative group h-[600px] overflow-hidden reveal">
+                <img src="https://images.pexels.com/photos/1755428/pexels-photo-1755428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Women's High Fashion" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-royal/20 transition-all duration-700 flex flex-col justify-end p-12">
+                    <h3 class="brand-font text-white text-3xl mb-2 tracking-widest translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Majestic Women</h3>
+                    <p class="text-gold text-xs uppercase tracking-[0.4em] mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700">Modern Sophistication</p>
+                    <div class="w-0 group-hover:w-full h-[1px] bg-gold transition-all duration-1000"></div>
+                </div>
+            </div>
+            <!-- Item 2 - Children Couture -->
+            <div class="relative group h-[600px] overflow-hidden reveal delay-100">
+                <img src="https://images.pexels.com/photos/1619714/pexels-photo-1619714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Children's Royalty" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-royal/20 transition-all duration-700 flex flex-col justify-end p-12">
+                    <h3 class="brand-font text-white text-3xl mb-2 tracking-widest translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Royal Heirs</h3>
+                    <p class="text-gold text-xs uppercase tracking-[0.4em] mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700">Children's Couture</p>
+                    <div class="w-0 group-hover:w-full h-[1px] bg-gold transition-all duration-1000"></div>
+                </div>
+            </div>
+            <!-- Item 3 - Luxury Detail -->
+            <div class="relative group h-[600px] overflow-hidden reveal delay-200">
+                <img src="https://images.pexels.com/photos/2043590/pexels-photo-2043590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Bespoke Couture" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110">
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-royal/20 transition-all duration-700 flex flex-col justify-end p-12">
+                    <h3 class="brand-font text-white text-3xl mb-2 tracking-widest translate-y-4 group-hover:translate-y-0 transition-transform duration-500">Legacy Pieces</h3>
+                    <p class="text-gold text-xs uppercase tracking-[0.4em] mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700">Timeless Elegance</p>
+                    <div class="w-0 group-hover:w-full h-[1px] bg-gold transition-all duration-1000"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision" class="py-40 px-8 bg-royal text-white parallax-section relative text-center" style="background-image: linear-gradient(rgba(45, 11, 90, 0.9), rgba(45, 11, 90, 0.9)), url('https://images.pexels.com/photos/1300550/pexels-photo-1300550.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+        <div class="max-w-5xl mx-auto relative z-10 reveal">
+            <h2 class="text-3xl md:text-6xl brand-font mb-16 text-gold uppercase tracking-[0.4em]">The Vision</h2>
+            <p class="text-2xl md:text-5xl leading-snug font-light italic max-w-5xl mx-auto border-y border-gold/20 py-16">
+                "To become a leading fashion empire recognized for delivering timeless elegance and premium style for women and children."
+            </p>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section id="reviews" class="py-32 bg-gray-50 px-8 royal-texture">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl brand-font text-center mb-24 gold-underline tracking-[0.3em] uppercase reveal">The Voices of the Empire</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="bg-white p-14 shadow-2xl border-t-2 border-gold text-center reveal delay-100">
+                    <div class="flex justify-center text-gold mb-10 text-xs gap-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-500 italic mb-12 text-lg leading-relaxed">"The quality is absolute perfection. My daughter and I felt like royalty at our last family event."</p>
+                    <p class="font-bold text-royal tracking-[0.3em] text-[11px] uppercase">- Mrs. Adesewa</p>
+                </div>
+                <div class="bg-white p-14 shadow-2xl border-t-2 border-gold text-center reveal delay-200">
+                    <div class="flex justify-center text-gold mb-10 text-xs gap-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-500 italic mb-12 text-lg leading-relaxed">"Finally, a brand that understands sophistication for both children and adults. Excellent service."</p>
+                    <p class="font-bold text-royal tracking-[0.3em] text-[11px] uppercase">- Chidimma O.</p>
+                </div>
+                <div class="bg-white p-14 shadow-2xl border-t-2 border-gold text-center reveal delay-300">
+                    <div class="flex justify-center text-gold mb-10 text-xs gap-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-500 italic mb-12 text-lg leading-relaxed">"The attention to detail in their embroidery is unmatched. Benin City's finest fashion house."</p>
+                    <p class="font-bold text-royal tracking-[0.3em] text-[11px] uppercase">- Oreva G.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Return Policy & Secure Payment -->
+    <section class="py-24 px-8 border-y border-gray-100 bg-white">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 reveal">
+            <div class="flex items-start gap-10">
+                <div class="text-gold text-6xl"><i class="fas fa-shield-check"></i></div>
+                <div>
+                    <h3 class="font-bold uppercase tracking-[0.4em] text-xs mb-5">Imperial Security</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8">All payments are encrypted via Paystack. Your financial privacy is the cornerstone of our empire.</p>
+                    <div class="flex gap-8 items-center">
+                        <!-- Use Direct SVG for Visa to guarantee fix -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="h-10 opacity-60">
+                        <svg viewBox="0 0 24 24" class="h-6 opacity-60 fill-current text-blue-800" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16.54 12.133L16.55 12.13L15.424 7h-2.115l-1.325 5.923L10.635 7H8.52l-2.074 7.568H8.53l.424-1.92h2.57l.243 1.92h2.1l1.325-5.92L16.54 12.133zM10.154 11.23h-1.55l.775-3.522.775 3.522z"/>
+                            <path d="M22 7l-2.022 7.568H18.04L16.018 7H18.13l.915 4.318L19.888 7H22zM5.53 7l-1.914 4.832L3.195 7H1.08l2.535 7.568h2.022L8.172 7H6.058zM4.172 14.568h2.1L7.597 7H5.483l-1.31 7.568z" fill="none"/>
+                            <path d="M2.384 7L1.1 12.133 1.5 12.3 2.5 14.568h2.1L3.5 7h-1.116zm18.337 0L19.888 11.318 18.973 7H16.86l2.022 7.568h1.938L22.844 7h-2.123z"/>
+                        </svg>
+                        <span class="text-xs uppercase tracking-widest text-gray-300 font-bold">Verified Visa</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-start gap-10">
+                <div class="text-gold text-6xl"><i class="fas fa-scroll"></i></div>
+                <div>
+                    <h3 class="font-bold uppercase tracking-[0.4em] text-xs mb-5">Return Policy</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">We offer a 7-day return policy for standard pieces. Items must be unworn and in original condition. Custom bespoke creations are final.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-royal text-white pt-32 pb-16 px-8 border-t border-gold/20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
+            <div>
+                <h3 class="brand-font text-gold text-3xl mb-10 tracking-[0.3em] uppercase">Valdora</h3>
+                <p class="text-[11px] text-gray-500 leading-loose uppercase tracking-[0.4em]">
+                    Timeless Elegance.<br>Premium Style.<br>Empowering Generations.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="uppercase text-[12px] font-bold tracking-[0.5em] mb-10 text-gold">The Empire Address</h4>
+                <p class="text-base text-gray-400 leading-loose font-light tracking-widest">
+                    20 Ekenhaun road,<br>
+                    Benin City, Edo State,<br>
+                    Nigeria.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="uppercase text-[12px] font-bold tracking-[0.5em] mb-10 text-gold">Concierge</h4>
+                <ul class="text-base space-y-8 text-gray-400 font-light tracking-widest">
+                    <li class="flex items-start gap-5">
+                        <i class="fa-solid fa-phone text-gold text-sm mt-1"></i>
+                        <div class="flex flex-col space-y-3">
+                            <a href="tel:+2347063758138" class="hover:text-gold transition-colors">+234 706 375 8138</a>
+                            <a href="tel:+2348059613263" class="hover:text-gold transition-colors">+234 805 961 3263</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="uppercase text-[12px] font-bold tracking-[0.5em] mb-10 text-gold">Social Empire</h4>
+                <div class="flex space-x-12">
+                    <a href="#" class="text-gray-400 hover:text-gold text-3xl transition-all hover:-translate-y-2"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-gold text-3xl transition-all hover:-translate-y-2"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-gold text-3xl transition-all hover:-translate-y-2"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center border-t border-white/5 pt-16">
+            <p class="text-[10px] uppercase tracking-[0.6em] text-gray-600 font-bold">
+                &copy; 2025 Valdora’s Empire. Crafting Royalty.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Smart Header Scroll Logic
+        let lastScrollTop = 0;
+        const nav = document.getElementById('mainNav');
+        const scrollThreshold = 100;
+
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Hide on scroll down, show on scroll up
+            if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+                nav.classList.add('nav-hidden');
+            } else {
+                nav.classList.remove('nav-hidden');
+            }
+            
+            // Change opacity on top
+            if (scrollTop < 50) {
+                nav.classList.remove('shadow-2xl');
+                nav.style.backgroundColor = 'rgba(45, 11, 90, 0.95)';
+            } else {
+                nav.classList.add('shadow-2xl');
+                nav.style.backgroundColor = 'rgba(26, 6, 54, 0.98)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        // 2. Intersection Observer for Reveal Animations
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
